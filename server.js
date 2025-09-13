@@ -36,6 +36,7 @@ const transporter = nodemailer.createTransport({
     tls: { rejectUnauthorized: false }
 });
 
+app.set("trust proxy", 1);
 
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
