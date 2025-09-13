@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <%- include("partials/navbar.ejs") %>
+
+        <section class="flex-grow-1 blog-container">
+            <h1 class="mkzone-blog slide-in slide-in-1">MKZone</h1>
+            <p class="blog-paragraph slide-in slide-in-2">Discover stories, tips, and insights across tech, life, and
+                more.
+            </p>
+
+            <div class="blog-card">
+
+                <% posts.forEach(post=> { %>
+
+                    <div class="blog-content slide-in slide-in-3">
+                        <a class="blog-title" href="/posts/<%= post.id %>">
+                            <img src="<%= post.image_url %>" class="blog-image rounded-top" alt="<%= post.title %>"
+                                onerror="this.onerror=null;this.src='/images/default.png';">
+
+                            <h2>
+                                <%= post.title.charAt(0).toUpperCase() + post.title.slice(1) %>
+                            </h2>
+
+                            <p class="author-paragraph">
+                                <span class="likeCountSpan">
+                                    <i class="fa-regular fa-thumbs-up"></i>
+                                    <%= post.like_count %>
+                                </span>
+                                Posted by <span class="author-name">
+                                    <%= post.username %>
+                                </span> on
+                                <%= new Date(post.created_at).toLocaleString("en-US", { month: "short" , day: "numeric"
+                                    , year: "numeric" }) %>
+                            </p>
+
+                        </a>
+                    </div>
+                    <% }) %>
+            </div>
+
+        </section>
+
+        <%- include("partials/footer.ejs") %>
+
+            <script src="/js/ui.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

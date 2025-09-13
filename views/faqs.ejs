@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/layout.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <%- include("partials/navbar.ejs") %>
+
+        <section class="flex-grow-1 faq-container">
+            <div class="faq-header">
+
+                <h2>💬 Your Questions, Answered</h2>
+                <p>Explore some common queries we get from our readers</p>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-question">What kind of content does MKZone offer?</div>
+                <div class="faq-answer">
+                    MKZone covers topics ranging from tech tutorials, coding tips, productivity hacks, to personal
+                    insights
+                    and trending digital topics.
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-question">How frequently is MKZone updated?</div>
+                <div class="faq-answer">
+                    New articles are published every 5–7 days, with occasional surprise posts when there's exciting news
+                    or
+                    trending topics.
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">Can I post my own articles on this blog?</div>
+                <div class="faq-answer">
+                    Yes! You can share your articles using our
+                    <a href="/publish" class="text-blue-600 hover:text-blue-800 no-line">Publish
+                        Page</a>.
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">Can I reuse your content on my site or social media?</div>
+                <div class="faq-answer">
+                    You’re welcome to share snippets with proper credit and a link back to the original post. Full
+                    reproduction without permission is not allowed.
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">How can I stay updated on new posts?</div>
+                <div class="faq-answer">
+                    Follow us on Instagram, Twitter, or LinkedIn to get instant
+                    updates.
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">How can I contact you directly?</div>
+                <div class="faq-answer">
+                    Use the Contact form on the site or email us at [ <a href="mailto:muktarbello32@gmail.com"
+                        style="text-decoration: none;">muktarbello32@gmail.com</a>
+                    ]. We try to respond within 24–48
+                    hours.
+                </div>
+            </div>
+        </section>
+
+        <%- include("partials/footer.ejs") %>
+
+            <script src="/js/ui.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
