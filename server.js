@@ -11,13 +11,17 @@ import nodemailer from "nodemailer";
 
 
 env.config();
+
 const app = express();
 const port = process.env.PORT;
 
 const pool = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false
+    ssl: process.env.NODE_ENV === "production"
+        ? { rejectUnauthorized: false }
+        : false
 });
+
 
 const PgSession = connectPg(session);
 
@@ -39,19 +43,25 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+
 app.use(
     session({
-        store: new PgSession({ pool }),
+        store: new PgSession({
+            pool,
+            tableName: "session"
+        }),
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 7,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "lax"
+            sameSite: "lax",
+            httpOnly: true
         }
     })
 );
+
 
 
 app.use((req, res, next) => {
