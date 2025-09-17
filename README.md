@@ -10,7 +10,7 @@ MKZone delivers a **responsive, secure, and scalable** environment for both cont
 - **Backend:** Node.js, Express, EJS
 - **Database:** PostgreSQL
 - **Auth & Security:** bcrypt, sessions, Nodemailer (email verification & recovery)
-- **Deployment:** (Render/Heroku/Vercel/Other)
+- **Deployment:** Render
 
 ---
 
