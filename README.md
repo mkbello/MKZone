@@ -39,4 +39,8 @@ MKZone delivers a **responsive, secure, and scalable** environment for both cont
 - Relational PostgreSQL schema for users, posts, comments, likes, and statistics  
 - Cascading rules for stability & consistency  
 - Real-time monitoring endpoints  
-- Optimized CRUD operations  
+- Optimized CRUD operations
+
+## Deployment
+Deployed on Render.
+
